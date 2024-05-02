@@ -1,0 +1,446 @@
+:root {
+  --main-color: #55527c;
+  --text-color: #130f49;
+  --yellow-color: #ff972d;
+  --blue-color: #a5a6ff;
+  --grey-color: #130f490d;
+  --background-color: #effbf8;
+  --header-bg-color: #fff;
+  --font-inter: 'Inter', sans-serif;
+  --font-karla: 'Karla', sans-serif;
+  --font-kristi: 'Kristi', cursive;
+  --text-line-height: 30px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+html{
+  scroll-behavior: smooth;
+}
+/* 滚动条宽度 */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+  background: var(--header-bg-color);
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  background: var(--blue-color);
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--header-bg-color);
+}
+body {
+  font-family: var(--font-inter);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+/* 容器为flex，左边按比例布局 */
+/* height和overflow固定sidebar */
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: auto;
+}
+
+/* sidebar 样式 */
+/* flex复合属性定义宽度占比 */
+.sidebar {
+  flex: 0 0 20%;
+  background-color: var(--header-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+  position: sticky;
+  top: 0;
+  border-right: 1px solid var(--grey-color);
+}
+.sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.sidebar-profile-pic {
+  width: 7rem;
+  height: 7rem;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid var(--blue-color);
+}
+.sidebar-profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sidebar-profile h2 {
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+.sidebar-profile span{
+  font-style: italic;
+  font-size: 2rem;
+  font-family: var(--font-kristi);
+  color: rgba(19, 15, 73, 0.07);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,30%);
+  white-space: nowrap;
+}
+.sidebar nav ul {
+  list-style-type: none;
+  font-family: var(--font-karla);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+.sidebar nav li {
+  margin-bottom: 2rem;
+}
+/* .sidebar nav a 优先级较高，改为nav a，方便.blue-color实现效果 */
+nav a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: all 0.3s ease;
+}
+.sidebar nav a:hover {
+  color: var(--blue-color);
+}
+.sidebar-text-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.sidebar-text-social .fa {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+  border-radius: 50%;
+  background-color: var(--grey-color);
+  color: var(--text-color);
+  margin-right: 1rem;
+}
+.sidebar-text footer {
+  line-height: var(--text-line-height);
+  text-align: center;
+  color: var(--main-color);
+}
+
+/* main */
+.content{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+/* section home 样式 */
+.home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* width: 100%; */
+  padding: 0 3rem;
+  margin: 0 auto;
+}
+.home-desc {
+  flex: 0 0 50%;
+}
+.home-desc-title h3 {
+  font-size: calc(1rem + 2vw);
+  font-weight: 800;
+}
+.home-desc-title h3 span {
+  font-size: inherit;
+}
+.home-desc-para {
+  margin: 2rem 0;
+  line-height: var(--text-line-height);
+  color: var(--main-color);
+}
+.home-desc-button {
+  margin: 3rem 0;
+  display: flex;
+}
+/* 先写上两个selector，之后看看用哪个 */
+/* .button-style */
+.button-style,
+.home-desc-button a {
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 1px solid var(--text-color);
+  border-radius: 0.5rem;
+  color: var(--main-color);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.home-desc-button a:hover {
+  background-color: var(--text-color);
+  color: var(--header-bg-color);
+}
+.button-style,
+.home-desc-button a:first-child {
+  background-color: var(--text-color);
+  color: var(--header-bg-color);
+  margin-right: 1rem;
+}
+.button-style:hover,
+.home-desc-button a:first-child:hover {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.home-desc-contact a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.home-desc-contact p {
+  border-left: 4px solid var(--yellow-color);
+  font-family: var(--font-karla);
+  padding: 0 1rem;
+  line-height: var(--text-line-height);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.home-desc-contact p:hover {
+  color: var(--yellow-color);
+  cursor: pointer;
+}
+.home-image {
+  flex: 0 0 50%;
+  padding-left: 2rem;
+}
+.home-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+/* 特殊字体颜色 */
+.blue-color{
+  color: var(--blue-color);
+}
+
+/* section about */
+.about-content {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--header-bg-color);
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--main-color);
+}
+.about-desc {
+  display: flex;
+}
+.about-desc-title {
+  flex: 0 0 33%;
+  display: flex;
+  flex-direction: column;
+}
+.about-desc-title h3 {
+  font-size: calc(1rem + 1vw);
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+.about-desc-title h3::before {
+  content: '- NICE TO MEET YOU!';
+  display: block;
+  font-size: 1rem;
+  font-weight: lighter;
+  margin-bottom: 0.5rem;
+  color: var(--main-color);
+}
+.about-desc-title p {
+  color: var(--text-color);
+  padding: 1rem 0;
+}
+.about-title-button {
+  margin: 2rem 0;
+}
+.about-desc-para p {
+  margin-bottom: 1.5rem;
+  line-height: var(--text-line-height);
+}
+.yellow-color {
+  color: var(--yellow-color);
+}
+.about-para-info {
+  padding: 1rem 0;
+}
+.about-para-info ul {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.about-para-info li{
+  padding: 0.5rem;
+}
+.about-para-info span {
+  display: block;
+  line-height: var(--text-line-height);
+}
+.about-info-title {
+  text-decoration: underline;
+}
+.about-info-text a,
+.about-info-text{
+  color: var(--text-color);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.about-info-text a{
+  text-decoration: none;
+}
+.about-info-text a:hover,
+.about-para-info li:not(:first-child) .about-info-text:hover{
+  cursor: pointer;
+  color: var(--yellow-color);
+}
+.about-list{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 3rem;
+  /* flex-wrap: wrap; */
+}
+.about-list-card{
+  width: 30%;
+  margin-right: 2rem;
+  /* margin-bottom: 2rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  border-radius: 0.5rem;
+  line-height: var(--text-line-height);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+.about-list-card h3{
+  color: var(--text-color);
+  font-size: calc(1rem + 0.5vw);
+  padding: 1rem auto;
+  text-align: center;
+}
+.about-list-card p{
+  font-size: 0.8rem;
+  white-space: nowrap;
+  text-align: center;
+}
+.card-one{
+  background-color: #d3f4ec;
+}
+.card-two{
+  background-color: #fce8d4;
+}
+.card-three{
+  background-color: #e3f9e0;
+}
+/* add animation to card */
+.about-list-card::before{
+  content: "";
+  position: absolute;
+  left: -250%;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform:skew(-30deg)
+}
+.about-list-card:hover::before{
+  left: 200%;
+  transition: all 0.8s ease-in;
+}
+.about-list-card:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+/* media responsive setting */
+@media screen and (max-width:1100px) {
+  .sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 0.5rem);
+    height: 60px;
+    padding: 1rem;
+  }
+  .sidebar-profile {
+    display: none;
+  }
+  .sidebar-text {
+    display: none;
+  }
+  .sidebar nav {
+    width: 100%;
+  }
+  .sidebar nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .about-content,
+  .home-content {
+    padding: 1rem;
+  }
+  
+}
+@media screen and (max-width: 768px) {
+  .home-content {
+    flex-direction: column-reverse;
+    height: auto;
+    min-width: 100%;
+    padding: 3rem;
+  }
+  .about-content{
+    height: auto;
+    padding: 3rem;
+  }
+  .about-desc{
+    flex-direction: column;
+  }
+  .about-list{
+    flex-wrap:wrap;
+  }
+  .about-list-card{
+    width: 60%;
+    margin: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sidebar {
+    display: none;
+  }
+  .home-desc-button {
+    flex-direction: column;
+  }
+  .home-desc-button a {
+    width: 300px;
+    margin: 1rem 0;
+  }
+  .home-content,
+  .about-content{
+    padding: 1rem 0;
+  }
+}
