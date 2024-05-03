@@ -1,11 +1,9 @@
 const container = document.querySelector('.container');
 const sections = document.querySelectorAll('section');
-const span = document.querySelector('.cards-wrapper') 
 
-// add event listener and call function
+
+// 1. add event listener and call function
 container.addEventListener('scroll', highlightNavLink);
-
-
 // sidebar a tag href=[#id] add class="blue-color" function declaration
 function highlightNavLink() {  
   let scrollY = container.scrollTop;
@@ -39,7 +37,60 @@ function highlightNavLink() {
   });
 }
 
-// three words cycles add animation flip-out
+// 2. home title add typewriter 
+
+// const titleSpan = document.querySelector('.home-desc-title span')
+
+// 2-1. only show once onload
+// window.onload = function () {
+//   let str = 'Elisc!';
+//   let length = 0;
+
+//   // 设置定时器，每隔一段时间调用 typeWriter 函数
+//   let intervalId = setInterval(typeWriter, 200);
+
+//   function typeWriter() {
+//     let typeWriterStr = str.substring(0, length);
+//     titleSpan.innerHTML = typeWriterStr;
+
+//     // 如果字符串还没有完全显示，则递增 length
+//     if (length <= str.length) {
+//       length++;
+//     } else {
+//       // 如果字符串已经完全显示，则清除定时器
+//       clearInterval(intervalId)
+//     }
+//   }
+// };
+// after onload keep showing
+
+// 2-2. window.onload = function() {
+//   let str = "Elisc!";
+//   let length = 0;
+
+//   function typeWriter() {
+//       let typeWriterStr = str.substring(0, length);
+//       titleSpan.innerHTML = typeWriterStr;
+
+//       // 如果字符串还没有完全显示，则递增 length
+//       if (length <= str.length) {
+//           length++;
+//       } else {
+//           // 如果字符串已经完全显示，则重置 length，并继续调用 typeWriter
+//           length = 0;
+//       }
+//       setTimeout(typeWriter, 200);
+//   }
+
+//   // 初始调用 typeWriter
+//   typeWriter();
+// };
+
+
+
+// 3. three words cycles add animation flip-out with CSS
+
+// const span = document.querySelector('.cards-wrapper') 
 // const words = ["creator","player","coder"]
 // let index = 0
 // function cycleWords(){

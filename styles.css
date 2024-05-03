@@ -328,7 +328,7 @@ nav a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1rem;
+  padding: 5rem 1rem;
   border-radius: 0.5rem;
   line-height: var(--text-line-height);
   user-select: none;
@@ -412,6 +412,7 @@ nav a {
 
 .animation-wrapper > span:first-child{
   animation: text-animation 12s infinite;
+  animation-timing-function:ease-out;
 }
 @keyframes text-animation {
   0% {margin-top: 0;}
