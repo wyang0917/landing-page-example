@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const sections = document.querySelectorAll('section');
+const span = document.querySelector('.cards-wrapper') 
 
 // add event listener and call function
 container.addEventListener('scroll', highlightNavLink);
@@ -38,4 +39,18 @@ function highlightNavLink() {
   });
 }
 
-
+// three words cycles add animation flip-out
+// const words = ["creator","player","coder"]
+// let index = 0
+// function cycleWords(){
+//   console.log('this fn works');
+//   span.textContent=words[index]
+//   span.classList.remove("word-flip-over")
+//   void span.offsetWidth
+//   span.classList.add("word-flip-over")
+//   // 用数组的长度取模，得到值的范围就是数组index的范围
+//   index = (index+1) % words.length
+  
+//   setTimeout(cycleWords,3000)
+// }
+// cycleWords()

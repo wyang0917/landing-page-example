@@ -355,7 +355,7 @@ nav a {
 .card-three{
   background-color: #e3f9e0;
 }
-/* add animation to card */
+/* add flash to card */
 .about-list-card::before{
   content: "";
   position: absolute;
@@ -371,6 +371,59 @@ nav a {
 }
 .about-list-card:hover{
   cursor: pointer;
+}
+/* js+css add animation flip-out */
+/* .word-flip-over{
+  text-transform: capitalize;
+  display: inline-block;
+  animation: flip-over  1.2s ease;
+}
+
+@keyframes flip-over {
+  from {
+    transform: rotateX(90deg);
+  }
+  to {
+    transform: rotateX(0);
+  }
+} */
+/* span animation */
+.animation{
+  display: flex;
+  text-transform: capitalize;
+  height: 4rem;
+  padding: 0;
+  margin: 1rem 0;
+  line-height: 4rem;
+}
+.animation p{
+  font-size: calc(1rem + 2vw);
+  font-weight: 800;
+}
+.animation-wrapper{
+  overflow: hidden;
+  margin-left: 1rem;
+}
+.animation-span{
+  font-size: calc(1rem + 2vw);
+  font-weight: 800;
+  display: block;
+}
+
+.animation-wrapper > span:first-child{
+  animation: text-animation 12s infinite;
+}
+@keyframes text-animation {
+  0% {margin-top: 0;}
+  10% {margin-top: 0;}
+  20% {margin-top: -4rem;}
+  30% {margin-top: -4rem;}
+  40% {margin-top: -8rem;}
+  60% {margin-top: -8rem;}
+  70% {margin-top: -4rem;}
+  80% {margin-top: -4rem;}
+  90% {margin-top: 0;}
+  100% {margin-top: 0;}
 }
 
 
