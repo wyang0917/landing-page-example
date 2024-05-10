@@ -440,6 +440,7 @@ nav a {
     width: calc(100vw - 0.5rem);
     height: 60px;
     padding: 1rem;
+    z-index: 1000;
   }
   .sidebar-profile {
     display: none;
@@ -457,6 +458,7 @@ nav a {
   .about-content,
   .home-content {
     padding: 1rem;
+    min-height: 100vh;
   }
   
 }
