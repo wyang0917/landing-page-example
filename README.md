@@ -1,5 +1,5 @@
-## This is a static landing page example
-# use html css & JS to build a web pag
+# This is a static landing page example
+## use html css & JS to build a web pag
 * text animation
 * hover flash style
 * navbar highlight with scrolling
