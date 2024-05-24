@@ -1,4 +1,5 @@
 # This is a static landing page example
+[Live Demo](https://wyang0917.github.io/landing-page-example/) 
 ## use html css & JS to build a web pag
 * text animation
 * hover flash style
